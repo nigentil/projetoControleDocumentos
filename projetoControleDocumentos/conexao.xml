@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Winner>
+  <Conexao>
+    <Servidor>ITLNB063</Servidor>
+    <Banco>DB_ConDoc</Banco>
+    <Usuario>sa</Usuario>
+    <Senha>zs 2012!*</Senha>
+  </Conexao>
+</Winner>
