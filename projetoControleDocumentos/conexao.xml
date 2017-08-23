@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Winner>
   <Conexao>
-    <Servidor>192.168.137.95</Servidor>
+    <Servidor>192.168.56.1</Servidor>
     <Banco>DB_ConDoc</Banco>
     <Usuario>sa</Usuario>
     <Senha>zs 2012!*</Senha>

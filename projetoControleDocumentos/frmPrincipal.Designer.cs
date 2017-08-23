@@ -31,17 +31,17 @@
             this.dgvArquivo = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.btnAbrirArquivo = new System.Windows.Forms.Button();
-            this.btnAprovReprov = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arquivosEnviadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAbrirArquivo = new System.Windows.Forms.Button();
+            this.btnAprovReprov = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArquivo)).BeginInit();
             this.menuStrip2.SuspendLayout();
@@ -78,6 +78,57 @@
             this.menuStrip2.Size = new System.Drawing.Size(776, 24);
             this.menuStrip2.TabIndex = 7;
             this.menuStrip2.Text = "menuStrip2";
+            // 
+            // cadastrosToolStripMenuItem
+            // 
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuáriosToolStripMenuItem,
+            this.empresaToolStripMenuItem,
+            this.tipoDeDocumentoToolStripMenuItem});
+            this.cadastrosToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.folder_user;
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            // 
+            // usuáriosToolStripMenuItem
+            // 
+            this.usuáriosToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.user_suit;
+            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuáriosToolStripMenuItem.Text = "Usuário";
+            this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
+            // 
+            // empresaToolStripMenuItem
+            // 
+            this.empresaToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.house_go;
+            this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empresaToolStripMenuItem.Text = "Empresa";
+            this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
+            // 
+            // tipoDeDocumentoToolStripMenuItem
+            // 
+            this.tipoDeDocumentoToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.report_go;
+            this.tipoDeDocumentoToolStripMenuItem.Name = "tipoDeDocumentoToolStripMenuItem";
+            this.tipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
+            this.tipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentoToolStripMenuItem_Click);
+            // 
+            // relatóriosToolStripMenuItem
+            // 
+            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivosEnviadosToolStripMenuItem});
+            this.relatóriosToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.report_word;
+            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
+            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.relatóriosToolStripMenuItem.Text = "Relatórios";
+            // 
+            // arquivosEnviadosToolStripMenuItem
+            // 
+            this.arquivosEnviadosToolStripMenuItem.Name = "arquivosEnviadosToolStripMenuItem";
+            this.arquivosEnviadosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.arquivosEnviadosToolStripMenuItem.Text = "Arquivos Enviados";
+            this.arquivosEnviadosToolStripMenuItem.Click += new System.EventHandler(this.arquivosEnviadosToolStripMenuItem_Click);
             // 
             // btnAbrirArquivo
             // 
@@ -143,57 +194,6 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // cadastrosToolStripMenuItem
-            // 
-            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem,
-            this.empresaToolStripMenuItem,
-            this.tipoDeDocumentoToolStripMenuItem});
-            this.cadastrosToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.folder_user;
-            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.cadastrosToolStripMenuItem.Text = "Cadastros";
-            // 
-            // usuáriosToolStripMenuItem
-            // 
-            this.usuáriosToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.user_suit;
-            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuáriosToolStripMenuItem.Text = "Usuário";
-            this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
-            // 
-            // empresaToolStripMenuItem
-            // 
-            this.empresaToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.house_go;
-            this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
-            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.empresaToolStripMenuItem.Text = "Empresa";
-            this.empresaToolStripMenuItem.Click += new System.EventHandler(this.empresaToolStripMenuItem_Click);
-            // 
-            // tipoDeDocumentoToolStripMenuItem
-            // 
-            this.tipoDeDocumentoToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.report_go;
-            this.tipoDeDocumentoToolStripMenuItem.Name = "tipoDeDocumentoToolStripMenuItem";
-            this.tipoDeDocumentoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.tipoDeDocumentoToolStripMenuItem.Text = "Tipo de Documento";
-            this.tipoDeDocumentoToolStripMenuItem.Click += new System.EventHandler(this.tipoDeDocumentoToolStripMenuItem_Click);
-            // 
-            // relatóriosToolStripMenuItem
-            // 
-            this.relatóriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivosEnviadosToolStripMenuItem});
-            this.relatóriosToolStripMenuItem.Image = global::projetoControleDocumentos.Properties.Resources.report_word;
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
-            // arquivosEnviadosToolStripMenuItem
-            // 
-            this.arquivosEnviadosToolStripMenuItem.Name = "arquivosEnviadosToolStripMenuItem";
-            this.arquivosEnviadosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.arquivosEnviadosToolStripMenuItem.Text = "Arquivos Enviados";
-            this.arquivosEnviadosToolStripMenuItem.Click += new System.EventHandler(this.arquivosEnviadosToolStripMenuItem_Click);
             // 
             // button1
             // 

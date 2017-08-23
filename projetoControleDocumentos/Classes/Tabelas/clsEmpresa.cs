@@ -20,7 +20,7 @@ namespace projetoControleDocumentos
         private const string _adiciona = "insert into empresa (codigo_empresa, razao_social, protocolo_envio, protocolo_autorizacao) values (?, ?, ?, ?)";
         private const string _edita = "update empresa set razao_social = ?, protocolo_envio=?, protocolo_autorizacao=? WHERE codigo_empresa=?";
         private const string _editaProtocoloEnvio = "update empresa set protocolo_envio=protocolo_envio+1";
-        private const string _editaProtocoloAut = "update empresa set protocolo_autorizacao=protocolo_autorizacao+1 WHERE codigo_empresa=?";
+        private const string _editaProtocoloAut = "update empresa set protocolo_autorizacao=protocolo_autorizacao+1";
 
         private int _codigoEmpresa = 0;
         private string _razaoSocial = "";
@@ -136,7 +136,6 @@ namespace projetoControleDocumentos
             bool bolDeuCerto;
             try
             {
-
                 if (_meuBd.VerificarStatusConexao() == ConnectionState.Closed)
                     _meuBd.Conectar();
 
@@ -144,13 +143,11 @@ namespace projetoControleDocumentos
                 odbcCMD.Parameters.Add("codigo_usuario", OdbcType.VarChar, 20).Value = codigo.ToString();
                 bolDeuCerto = odbcCMD.ExecuteNonQuery() ==1;
                 return bolDeuCerto;
-
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
         
         public bool Salvar()
@@ -171,7 +168,6 @@ namespace projetoControleDocumentos
             {
                 throw ex;
             }
- 
         }
 
         public bool AtualizarProtocoloEnvio()
@@ -181,15 +177,29 @@ namespace projetoControleDocumentos
                 if (_meuBd.VerificarStatusConexao() == ConnectionState.Closed)
                     _meuBd.Conectar();
 
-                OdbcCommand odbcCMD = new OdbcCommand(_edita, _meuBd.Connection);
+                OdbcCommand odbcCMD = new OdbcCommand(_editaProtocoloEnvio, _meuBd.Connection);
                 return odbcCMD.ExecuteNonQuery() == 1;
             }
             catch (OdbcException ex)
             {
                 throw ex;
             }
-
         }
 
+        public bool AtualizarProtocoloAutorizacao()
+        {
+            try
+            {
+                if (_meuBd.VerificarStatusConexao() == ConnectionState.Closed)
+                    _meuBd.Conectar();
+
+                OdbcCommand odbcCMD = new OdbcCommand(_editaProtocoloAut, _meuBd.Connection);
+                return odbcCMD.ExecuteNonQuery() == 1;
+            }
+            catch (OdbcException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

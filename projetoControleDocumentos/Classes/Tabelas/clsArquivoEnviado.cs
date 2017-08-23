@@ -403,7 +403,7 @@ namespace projetoControleDocumentos
                     _meuBd.Conectar();
 
                 clsAcesso myClass = new clsAcesso();
-
+                bool result;
                 int _protEnvio = DateTime.Now.Year * 10000 + Convert.ToInt16(myClass.Dlookup("protocolo_envio", "empresa", "")) + 1;
                 
                 //Carrega o arquivo em um array de bytes
@@ -431,7 +431,11 @@ namespace projetoControleDocumentos
                 if (odbcCMD.ExecuteNonQuery() == 0)
                     return false;
                 else
+                {
+                    clsEmpresa myEmp = new clsEmpresa();
+                    myEmp.AtualizarProtocoloEnvio();
                     return true;
+                }
             }
             catch (Exception ex)
             {
@@ -493,7 +497,15 @@ namespace projetoControleDocumentos
                 odbcCMD.Parameters.Add("Data_Aprov", OdbcType.DateTime).Value = DateTime.Now;
                 odbcCMD.Parameters.Add("Protocolo_aut", OdbcType.Int).Value = _protocoloAutorizacao;
                 odbcCMD.Parameters.Add("codigo_envio", OdbcType.Int).Value = _codigoEnvio;
-                return odbcCMD.ExecuteNonQuery() == 1;
+                
+                if (odbcCMD.ExecuteNonQuery() == 1)
+                {
+                    clsEmpresa myEmp = new clsEmpresa();
+                    myEmp.AtualizarProtocoloAutorizacao();
+                    return true;
+                }
+                else
+                    return false;
             }
             catch (OdbcException ex)
             {

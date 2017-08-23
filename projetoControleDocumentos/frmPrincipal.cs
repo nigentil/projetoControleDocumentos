@@ -9,6 +9,9 @@ namespace projetoControleDocumentos
     {
 
         int _codigoEnvio;
+        string _usuarioAprov;
+        string _usuarioReprov;
+
         Form f;
         clsArquivoEnviado MyClass = new clsArquivoEnviado();
         public frmPrincipal()
@@ -65,7 +68,9 @@ namespace projetoControleDocumentos
         private void dgvArquivo_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
            _codigoEnvio= Convert.ToUInt16(dgvArquivo.Rows[e.RowIndex].Cells["codigo_envio"].FormattedValue.ToString());
-           clsGlobal.Arquivo = _codigoEnvio;
+            _usuarioAprov = dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_aprov"].FormattedValue.ToString();
+            _usuarioReprov = dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_reprov"].FormattedValue.ToString();
+            clsGlobal.Arquivo = _codigoEnvio;
         }
 
         private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -120,9 +125,16 @@ namespace projetoControleDocumentos
         {
             if (clsGlobal.Perfil == 1)
             {
-                f = new frmPrincipal_Aprovacao();
-                f.ShowDialog();
-                frmPrincipal_Load(sender, e);
+                if (_usuarioAprov != "")
+                    clsMensagem.Informacao("Este arquivo já esta aprovado!");
+                else if (_usuarioReprov != "")
+                    clsMensagem.Informacao("Este documento ja esta reprovado!");
+                else
+                {
+                    f = new frmPrincipal_Aprovacao();
+                    f.ShowDialog();
+                    frmPrincipal_Load(sender, e);
+                }
             }
             else
             {
