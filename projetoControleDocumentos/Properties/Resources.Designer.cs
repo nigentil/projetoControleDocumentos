@@ -83,6 +83,16 @@ namespace projetoControleDocumentos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap database_refresh {
+            get {
+                object obj = ResourceManager.GetObject("database_refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap database_save {
             get {
                 object obj = ResourceManager.GetObject("database_save", resourceCulture);
@@ -96,6 +106,26 @@ namespace projetoControleDocumentos.Properties {
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap find {
+            get {
+                object obj = ResourceManager.GetObject("find", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder_page_white {
+            get {
+                object obj = ResourceManager.GetObject("folder_page_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +153,16 @@ namespace projetoControleDocumentos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap page_white_excel {
+            get {
+                object obj = ResourceManager.GetObject("page_white_excel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap report_go {
             get {
                 object obj = ResourceManager.GetObject("report_go", resourceCulture);
@@ -136,6 +176,26 @@ namespace projetoControleDocumentos.Properties {
         internal static System.Drawing.Bitmap report_word {
             get {
                 object obj = ResourceManager.GetObject("report_word", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap server_edit {
+            get {
+                object obj = ResourceManager.GetObject("server_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tag_blue {
+            get {
+                object obj = ResourceManager.GetObject("tag_blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

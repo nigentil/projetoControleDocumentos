@@ -48,14 +48,17 @@ go
 create table arquivo_enviado
 (
 	codigo_envio int identity(1,1) not null,
+	tipo_Arquivo int not null,
 	descricao_arquivo varchar(255) not null,
 	nome_Arquivo varchar(255),
-	tamanho_arquivo smallint,
-	Arquivo image,
+	tamanho_arquivo int,
+	arquivo image,
 	codigo_usuario_envio varchar(20),
 	data_envio datetime not null,
+	protocolo_envio bigint not null,
 	codigo_usuario_aprov varchar(20),
 	data_aprov datetime null,
+	protocolo_aut bigint null,
 	codigo_usuario_reprov varchar(20),
 	data_reprov datetime null,
 	motivo_reprov text,
@@ -63,12 +66,5 @@ create table arquivo_enviado
 )
 go
 
-insert into arquivo_enviado (descricao_arquivo,codigo_usuario_envio, data_envio ) Values('CCXP','admin',getdate())
+insert into arquivo_enviado (tipo_Arquivo, descricao_arquivo,codigo_usuario_envio, data_envio, protocolo_envio) Values(11, 'CCXP','admin',getdate(), 20170001)
 go
-
-
-
-
-
-
-

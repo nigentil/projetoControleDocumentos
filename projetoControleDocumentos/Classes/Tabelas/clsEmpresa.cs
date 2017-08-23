@@ -19,6 +19,8 @@ namespace projetoControleDocumentos
         private const string _exclui = "delete from empresa where codigo_empresa = ?";
         private const string _adiciona = "insert into empresa (codigo_empresa, razao_social, protocolo_envio, protocolo_autorizacao) values (?, ?, ?, ?)";
         private const string _edita = "update empresa set razao_social = ?, protocolo_envio=?, protocolo_autorizacao=? WHERE codigo_empresa=?";
+        private const string _editaProtocoloEnvio = "update empresa set protocolo_envio=protocolo_envio+1";
+        private const string _editaProtocoloAut = "update empresa set protocolo_autorizacao=protocolo_autorizacao+1 WHERE codigo_empresa=?";
 
         private int _codigoEmpresa = 0;
         private string _razaoSocial = "";
@@ -72,7 +74,7 @@ namespace projetoControleDocumentos
             }
         }
 
-        public bool Carregar(string usuario)
+        public bool Carregar(int empresa)
         {
             try
             {
@@ -80,7 +82,6 @@ namespace projetoControleDocumentos
                     _meuBd.Conectar();
 
                 OdbcCommand odbcCMD = new OdbcCommand(_carrega, _meuBd.Connection);
-                odbcCMD.Parameters.Add("codigo_usuario", OdbcType.VarChar, 20).Value = usuario;
 
                 OdbcDataReader reader = odbcCMD.ExecuteReader();
 
@@ -171,6 +172,23 @@ namespace projetoControleDocumentos
                 throw ex;
             }
  
+        }
+
+        public bool AtualizarProtocoloEnvio()
+        {
+            try
+            {
+                if (_meuBd.VerificarStatusConexao() == ConnectionState.Closed)
+                    _meuBd.Conectar();
+
+                OdbcCommand odbcCMD = new OdbcCommand(_edita, _meuBd.Connection);
+                return odbcCMD.ExecuteNonQuery() == 1;
+            }
+            catch (OdbcException ex)
+            {
+                throw ex;
+            }
+
         }
 
     }

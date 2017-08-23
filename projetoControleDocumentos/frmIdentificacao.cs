@@ -40,8 +40,6 @@ namespace projetoControleDocumentos
                 {
                     Program.SetMainForm(new frmPrincipal());
                     Program.ShowMainForm();
-                    var f = new frmPrincipal();
-                    f.Controls["txtUsuarioLogado"].Text = txtUsuario.Text;
                     this.Close();
                 }
                 else

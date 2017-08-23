@@ -15,7 +15,7 @@ namespace projetoControleDocumentos
         private const string _carrega = "select * from tipo_documento where codigo_tipo = ?";
         private const string _exclui = "delete from tipo_documento where codigo_tipo = ?";
         private const string _adiciona = "insert into tipo_documento (descricao_tipo) VALUES (?)";
-        private const string _edita = "update tipo_documento set descricao_tipo = ? WHERE codigo_usuario = ?";
+        private const string _edita = "update tipo_documento set descricao_tipo = ? WHERE codigo_tipo = ?";
 
         private int _codigoTipo = 0;
         private string _descricaoTipo = "";
@@ -139,8 +139,8 @@ namespace projetoControleDocumentos
                     _meuBd.Conectar();
 
                 OdbcCommand odbcCMD = new OdbcCommand(_edita, _meuBd.Connection);
-                odbcCMD.Parameters.Add("descricao_tipo", OdbcType.VarChar,50).Value = _descricaoTipo;
-                odbcCMD.Parameters.Add("codigo_tipo", OdbcType.Int, 20).Value = _codigoTipo;
+                odbcCMD.Parameters.Add("descricao_tipo", OdbcType.VarChar,100).Value = _descricaoTipo;
+                odbcCMD.Parameters.Add("codigo_tipo", OdbcType.Int).Value = _codigoTipo;
                 return odbcCMD.ExecuteNonQuery() == 1;
             }
             catch (OdbcException ex)

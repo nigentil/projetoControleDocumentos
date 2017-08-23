@@ -140,6 +140,8 @@ namespace projetoControleDocumentos
 
             if (reader.HasRows)
             {
+                clsGlobal.Login = usuario;
+                clsGlobal.Perfil = Convert.ToInt16(reader["tipo_usuario"].ToString());
                 reader.Close();
                 reader.Dispose();
                 return true; 

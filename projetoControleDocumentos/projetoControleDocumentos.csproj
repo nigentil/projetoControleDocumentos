@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel1">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,9 +54,49 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\clsConexao.cs" />
+    <Compile Include="Classes\Tabelas\clsAcesso.cs" />
     <Compile Include="Classes\Tabelas\clsEmpresa.cs" />
     <Compile Include="Classes\Tabelas\clsTipoDocumento.cs" />
     <Compile Include="Classes\Tabelas\clsArquivoEnviado.cs" />
+    <Compile Include="clsGlobal.cs" />
+    <Compile Include="DB_ConDocDataSet.cs">
+      <DependentUpon>DB_ConDocDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DB_ConDocDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_ConDocDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelatorioArquivoEnviado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioArquivoEnviado.Designer.cs">
+      <DependentUpon>frmRelatorioArquivoEnviado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRelatorioArquivosEnviados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRelatorioArquivosEnviados.Designer.cs">
+      <DependentUpon>frmRelatorioArquivosEnviados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal_Aprovacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal_Aprovacao.Designer.cs">
+      <DependentUpon>frmPrincipal_Aprovacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal_Editar.Designer.cs">
+      <DependentUpon>frmPrincipal_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal_Adicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal_Adicionar.Designer.cs">
+      <DependentUpon>frmPrincipal_Adicionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIdentificacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +139,21 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Tabelas\clsUsuario.cs" />
+    <EmbeddedResource Include="frmRelatorioArquivoEnviado.resx">
+      <DependentUpon>frmRelatorioArquivoEnviado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRelatorioArquivosEnviados.resx">
+      <DependentUpon>frmRelatorioArquivosEnviados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal_Aprovacao.resx">
+      <DependentUpon>frmPrincipal_Aprovacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal_Editar.resx">
+      <DependentUpon>frmPrincipal_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal_Adicionar.resx">
+      <DependentUpon>frmPrincipal_Adicionar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIdentificacao.resx">
       <DependentUpon>frmIdentificacao.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +183,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="rptArquivoEnviado.rdlc" />
+    <None Include="DB_ConDocDataSet.xsc">
+      <DependentUpon>DB_ConDocDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_ConDocDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_ConDocDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_ConDocDataSet.xss">
+      <DependentUpon>DB_ConDocDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,6 +212,12 @@
     <Content Include="conexao.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\database_refresh.png" />
+    <None Include="Resources\page_white_excel.png" />
+    <None Include="Resources\folder_page_white.png" />
+    <None Include="Resources\tag_blue.png" />
+    <None Include="Resources\server_edit.png" />
+    <None Include="Resources\find.png" />
     <None Include="Resources\folder_user.png" />
     <None Include="Resources\report_word.png" />
     <None Include="Resources\report_go.png" />
@@ -148,6 +228,35 @@
     <None Include="Resources\database_save.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
