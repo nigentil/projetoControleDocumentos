@@ -4,6 +4,6 @@
     <Servidor>192.168.56.1</Servidor>
     <Banco>DB_ConDoc</Banco>
     <Usuario>sa</Usuario>
-    <Senha>zs 2012!*</Senha>
+    <Senha></Senha>
   </Conexao>
 </Winner>
