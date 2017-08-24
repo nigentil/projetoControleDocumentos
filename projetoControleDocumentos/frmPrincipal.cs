@@ -67,10 +67,14 @@ namespace projetoControleDocumentos
 
         private void dgvArquivo_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-           _codigoEnvio= Convert.ToUInt16(dgvArquivo.Rows[e.RowIndex].Cells["codigo_envio"].FormattedValue.ToString());
-            _usuarioAprov = dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_aprov"].FormattedValue.ToString();
-            _usuarioReprov = dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_reprov"].FormattedValue.ToString();
-            clsGlobal.Arquivo = _codigoEnvio;
+
+            if (dgvArquivo.Columns[0].Name.ToString() != "Depth")
+            {
+                _codigoEnvio = Convert.ToUInt16(dgvArquivo.Rows[e.RowIndex].Cells["codigo_envio"].FormattedValue.ToString());
+                _usuarioAprov = dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_aprov"].FormattedValue.ToString();
+                _usuarioReprov = dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_reprov"].FormattedValue.ToString();
+                clsGlobal.Arquivo = _codigoEnvio;
+            }
         }
 
         private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -80,13 +84,16 @@ namespace projetoControleDocumentos
 
         private void dgvArquivo_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            if (dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_aprov"].FormattedValue == "")
+            if (dgvArquivo.Columns[0].Name.ToString() != "Depth")
             {
-                dgvArquivo.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
-            }
-            else
-            {
-                dgvArquivo.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Green;
+                if (dgvArquivo.Rows[e.RowIndex].Cells["codigo_usuario_aprov"].FormattedValue.ToString() == "")
+                {
+                    dgvArquivo.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
+                }
+                else
+                {
+                    dgvArquivo.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Green;
+                }
             }
         }
 

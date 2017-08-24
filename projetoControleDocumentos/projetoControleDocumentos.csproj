@@ -209,9 +209,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="conexao.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\database_refresh.png" />
     <None Include="Resources\page_white_excel.png" />
     <None Include="Resources\folder_page_white.png" />
