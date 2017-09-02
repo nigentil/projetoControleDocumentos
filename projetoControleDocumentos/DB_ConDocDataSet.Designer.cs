@@ -297,6 +297,8 @@ namespace projetoControleDocumentos {
             
             private global::System.Data.DataColumn columnMotivoReprovação;
             
+            private global::System.Data.DataColumn columnPotocolo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SP_Relatorio_ArquivoEnviadoDataTable() {
@@ -404,6 +406,14 @@ namespace projetoControleDocumentos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PotocoloColumn {
+                get {
+                    return this.columnPotocolo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,7 +449,7 @@ namespace projetoControleDocumentos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SP_Relatorio_ArquivoEnviadoRow AddSP_Relatorio_ArquivoEnviadoRow(System.DateTime DataEnvio, string NomeUsuario, string NomeArquivo, string TipoArquivo, int TamanhoArquivo, string DescricaoArquivo, System.DateTime DataAprovacao, System.DateTime DataReprovacao, string MotivoReprovação) {
+            public SP_Relatorio_ArquivoEnviadoRow AddSP_Relatorio_ArquivoEnviadoRow(System.DateTime DataEnvio, string NomeUsuario, string NomeArquivo, string TipoArquivo, int TamanhoArquivo, string DescricaoArquivo, System.DateTime DataAprovacao, System.DateTime DataReprovacao, string MotivoReprovação, long Potocolo) {
                 SP_Relatorio_ArquivoEnviadoRow rowSP_Relatorio_ArquivoEnviadoRow = ((SP_Relatorio_ArquivoEnviadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         DataEnvio,
@@ -450,7 +460,8 @@ namespace projetoControleDocumentos {
                         DescricaoArquivo,
                         DataAprovacao,
                         DataReprovacao,
-                        MotivoReprovação};
+                        MotivoReprovação,
+                        Potocolo};
                 rowSP_Relatorio_ArquivoEnviadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Relatorio_ArquivoEnviadoRow);
                 return rowSP_Relatorio_ArquivoEnviadoRow;
@@ -482,6 +493,7 @@ namespace projetoControleDocumentos {
                 this.columnDataAprovacao = base.Columns["DataAprovacao"];
                 this.columnDataReprovacao = base.Columns["DataReprovacao"];
                 this.columnMotivoReprovação = base.Columns["MotivoReprovação"];
+                this.columnPotocolo = base.Columns["Potocolo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -505,6 +517,8 @@ namespace projetoControleDocumentos {
                 base.Columns.Add(this.columnDataReprovacao);
                 this.columnMotivoReprovação = new global::System.Data.DataColumn("MotivoReprovação", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMotivoReprovação);
+                this.columnPotocolo = new global::System.Data.DataColumn("Potocolo", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPotocolo);
                 this.columnDataEnvio.AllowDBNull = false;
                 this.columnNomeUsuario.AllowDBNull = false;
                 this.columnNomeUsuario.MaxLength = 50;
@@ -514,6 +528,7 @@ namespace projetoControleDocumentos {
                 this.columnDescricaoArquivo.AllowDBNull = false;
                 this.columnDescricaoArquivo.MaxLength = 255;
                 this.columnMotivoReprovação.MaxLength = 2147483647;
+                this.columnPotocolo.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -785,6 +800,17 @@ namespace projetoControleDocumentos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long Potocolo {
+                get {
+                    return ((long)(this[this.tableSP_Relatorio_ArquivoEnviado.PotocoloColumn]));
+                }
+                set {
+                    this[this.tableSP_Relatorio_ArquivoEnviado.PotocoloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNomeArquivoNull() {
                 return this.IsNull(this.tableSP_Relatorio_ArquivoEnviado.NomeArquivoColumn);
             }
@@ -1012,6 +1038,7 @@ namespace projetoControleDocumentos.DB_ConDocDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("DataAprovacao", "DataAprovacao");
             tableMapping.ColumnMappings.Add("DataReprovacao", "DataReprovacao");
             tableMapping.ColumnMappings.Add("MotivoReprovação", "MotivoReprovação");
+            tableMapping.ColumnMappings.Add("Potocolo", "Potocolo");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

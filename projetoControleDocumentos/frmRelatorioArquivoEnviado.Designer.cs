@@ -30,26 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_Relatorio_ArquivoEnviadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DB_ConDocDataSet = new projetoControleDocumentos.DB_ConDocDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SP_Relatorio_ArquivoEnviadoTableAdapter = new projetoControleDocumentos.DB_ConDocDataSetTableAdapters.SP_Relatorio_ArquivoEnviadoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.SP_Relatorio_ArquivoEnviadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DB_ConDocDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.SP_Relatorio_ArquivoEnviadoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "projetoControleDocumentos.rptArquivoEnviado.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(731, 307);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // SP_Relatorio_ArquivoEnviadoBindingSource
             // 
@@ -60,6 +47,22 @@
             // 
             this.DB_ConDocDataSet.DataSetName = "DB_ConDocDataSet";
             this.DB_ConDocDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.SP_Relatorio_ArquivoEnviadoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "projetoControleDocumentos.rptArquivoEnviado.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(731, 307);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.reportViewer1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.reportViewer1_KeyDown);
+            this.reportViewer1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.reportViewer1_KeyPress);
             // 
             // SP_Relatorio_ArquivoEnviadoTableAdapter
             // 
@@ -72,6 +75,7 @@
             this.ClientSize = new System.Drawing.Size(731, 307);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MinimizeBox = false;
             this.Name = "frmRelatorioArquivoEnviado";
             this.ShowIcon = false;
@@ -79,6 +83,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Arquivo Enviado";
             this.Load += new System.EventHandler(this.frmArquivoEnviado_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmRelatorioArquivoEnviado_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.SP_Relatorio_ArquivoEnviadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DB_ConDocDataSet)).EndInit();
             this.ResumeLayout(false);

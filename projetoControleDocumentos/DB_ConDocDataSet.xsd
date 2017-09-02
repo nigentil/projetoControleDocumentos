@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_Relatorio_ArquivoEnviadoTableAdapter" GeneratorDataComponentClassName="SP_Relatorio_ArquivoEnviadoTableAdapter" Name="SP_Relatorio_ArquivoEnviado" UserDataComponentName="SP_Relatorio_ArquivoEnviadoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_ConDocConnectionString (Settings)" DbObjectName="DB_ConDoc.dbo.SP_Relatorio_ArquivoEnviado" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DB_ConDocConnectionString (Settings)" DbObjectName="DB_ConDoc.dbo.SP_Relatorio_ArquivoEnviado" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SP_Relatorio_ArquivoEnviado</CommandText>
@@ -31,6 +31,7 @@
               <Mapping SourceColumn="DataAprovacao" DataSetColumn="DataAprovacao" />
               <Mapping SourceColumn="DataReprovacao" DataSetColumn="DataReprovacao" />
               <Mapping SourceColumn="MotivoReprovação" DataSetColumn="MotivoReprovação" />
+              <Mapping SourceColumn="Potocolo" DataSetColumn="Potocolo" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -42,7 +43,7 @@
   <xs:element name="DB_ConDocDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DB_ConDocDataSet" msprop:Generator_UserDSName="DB_ConDocDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_Relatorio_ArquivoEnviado" msprop:Generator_TableClassName="SP_Relatorio_ArquivoEnviadoDataTable" msprop:Generator_TableVarName="tableSP_Relatorio_ArquivoEnviado" msprop:Generator_TablePropName="SP_Relatorio_ArquivoEnviado" msprop:Generator_RowDeletingName="SP_Relatorio_ArquivoEnviadoRowDeleting" msprop:Generator_RowChangingName="SP_Relatorio_ArquivoEnviadoRowChanging" msprop:Generator_RowEvHandlerName="SP_Relatorio_ArquivoEnviadoRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Relatorio_ArquivoEnviadoRowDeleted" msprop:Generator_UserTableName="SP_Relatorio_ArquivoEnviado" msprop:Generator_RowChangedName="SP_Relatorio_ArquivoEnviadoRowChanged" msprop:Generator_RowEvArgName="SP_Relatorio_ArquivoEnviadoRowChangeEvent" msprop:Generator_RowClassName="SP_Relatorio_ArquivoEnviadoRow">
+        <xs:element name="SP_Relatorio_ArquivoEnviado" msprop:Generator_TableClassName="SP_Relatorio_ArquivoEnviadoDataTable" msprop:Generator_TableVarName="tableSP_Relatorio_ArquivoEnviado" msprop:Generator_RowChangedName="SP_Relatorio_ArquivoEnviadoRowChanged" msprop:Generator_TablePropName="SP_Relatorio_ArquivoEnviado" msprop:Generator_RowDeletingName="SP_Relatorio_ArquivoEnviadoRowDeleting" msprop:Generator_RowChangingName="SP_Relatorio_ArquivoEnviadoRowChanging" msprop:Generator_RowEvHandlerName="SP_Relatorio_ArquivoEnviadoRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Relatorio_ArquivoEnviadoRowDeleted" msprop:Generator_RowClassName="SP_Relatorio_ArquivoEnviadoRow" msprop:Generator_UserTableName="SP_Relatorio_ArquivoEnviado" msprop:Generator_RowEvArgName="SP_Relatorio_ArquivoEnviadoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DataEnvio" msprop:Generator_ColumnVarNameInTable="columnDataEnvio" msprop:Generator_ColumnPropNameInRow="DataEnvio" msprop:Generator_ColumnPropNameInTable="DataEnvioColumn" msprop:Generator_UserColumnName="DataEnvio" type="xs:dateTime" />
@@ -84,6 +85,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Potocolo" msprop:Generator_ColumnVarNameInTable="columnPotocolo" msprop:Generator_ColumnPropNameInRow="Potocolo" msprop:Generator_ColumnPropNameInTable="PotocoloColumn" msprop:Generator_UserColumnName="Potocolo" type="xs:long" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

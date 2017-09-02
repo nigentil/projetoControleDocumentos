@@ -20,7 +20,7 @@ namespace projetoControleDocumentos
         private void frmArquivoEnviado_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'DB_ConDocDataSet.SP_Relatorio_ArquivoEnviado' table. You can move, or remove it, as needed.
-            
+            this.KeyPreview = true;
             this.SP_Relatorio_ArquivoEnviadoTableAdapter.Fill(this.DB_ConDocDataSet.SP_Relatorio_ArquivoEnviado,clsGlobal.Arquivo);
             this.reportViewer1.RefreshReport();
         }
@@ -28,6 +28,27 @@ namespace projetoControleDocumentos
         private void reportViewer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmRelatorioArquivoEnviado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.P)
+            {
+                reportViewer1.PrintDialog();
+            }
+        }
+
+        private void reportViewer1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.P)
+            {
+                reportViewer1.PrintDialog();
+            }
+        }
+
+        private void reportViewer1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }

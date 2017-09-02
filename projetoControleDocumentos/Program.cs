@@ -13,6 +13,7 @@ namespace projetoControleDocumentos
         [STAThread]
         static void Main()
         {
+            //clsMensagem.Informacao(Convert.ToDecimal("3.4,234").ToString());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MainContext.MainForm = new frmIdentificacao();
